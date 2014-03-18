@@ -5,7 +5,6 @@ https://code.google.com/codejam/
 
 Java practices remaining to be implemented in Python:
 
-01_StoreCredit	Merge branch 'master' of github.com:lantoli/Google-Code-Jam	2 years ago
 02_ReverseWords	reverse words	2 years ago
 03_T9Spelling	t9 spelling	2 years ago
 04_AlienLanguage	alien language	2 years ago
