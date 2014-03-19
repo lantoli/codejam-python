@@ -6,7 +6,7 @@ import sys
 sys.stdin = open(FILENAME + ".in", 'r')
 sys.stdout = open(FILENAME + ".out", 'w')
 
-def get_line(): return input().strip()
+def get_line(): return input()
 def get_int(): return int(get_line())
 def get_strs(): return [x for x in get_line().split()]
 
