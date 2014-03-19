@@ -5,7 +5,6 @@ https://code.google.com/codejam/
 
 Java practices remaining to be implemented in Python:
 
-03_T9Spelling	t9 spelling	2 years ago
 04_AlienLanguage	alien language	2 years ago
 05_Watersheds	small optimization to watersheds	2 years ago
 06_WelcomeToCodeJam	welcome to code jam with DP (dynamic programming)	2 years ago
