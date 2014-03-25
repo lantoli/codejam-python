@@ -36,5 +36,4 @@ GCJ2012_1A_2_KingdomRush	gcj 2010 online 1A	2 years ago
 GCJ2012_Qualif_1_SpeakingInTongues	Google Code Jam 2012, qualification round	2 years ago
 GCJ2012_Qualif_2_DancingWithTheGooglers	Google Code Jam 2012, qualification round	2 years ago
 GCJ2012_Qualif_3_RecycledNumbers	gcj 2010 online 1A	2 years ago
-GCJ2013_Qualif_3_FairAndSquare	gcj 2013, qualif	11 months ago
 GCJ2013_Round1A_A_Bullseye
