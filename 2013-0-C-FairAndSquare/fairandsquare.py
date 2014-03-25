@@ -11,11 +11,6 @@ def get_int(): return int(get_line())
 def get_ints(): return [int(x) for x in get_line().split()]
 
 
-def as_str(number, digits):
-    ret = str(number)
-    while len(ret) < digits: ret = "0" + ret
-    return ret
-
 def good(number):
     n = str(number)
     l = len(n)//2
@@ -23,16 +18,38 @@ def good(number):
     part2 = n[l+1:]
     return part1 == part2
 
+
+
+def next_comb(a):
+    while a.count(2) != len(a):
+        pos = len(a) - 1
+        while pos >= 0:
+            a[pos] += 1
+            if a[pos] == 3:
+                a[pos] = 0
+                pos -= 1
+            else:
+                break
+        return True
+    return False
+
+
 numbers = [1, 4, 9]
 for digits in range(1,5):
-    for part in range(10 ** (digits-1), 10 ** digits):
-        number = int(as_str(part, digits) + as_str(part, digits)[::-1])
+
+    a = [0] + [2] * (digits-1)
+    while next_comb(a):
+        part = ''.join(map(str,a))
+        number = int(part + part[::-1])
         nnumber = number*number
         if len(str(nnumber)) % 2 == 1 and good(nnumber):
             numbers.append(nnumber)
-    for part in range(10 ** (digits-1), 10 ** digits):
+
+    a = [0] + [2] * (digits-1)
+    while next_comb(a):
+        part = ''.join(map(str,a))
         for middle in range(0,10):
-            number = int(as_str(part, digits) + str(middle) +  as_str(part, digits)[::-1])
+            number = int(str(part) + str(middle) +  str(part)[::-1])
             nnumber = number*number
             if len(str(nnumber)) % 2 == 1 and good(nnumber):
                 numbers.append(nnumber)
