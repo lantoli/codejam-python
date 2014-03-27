@@ -1,10 +1,10 @@
 # https://code.google.com/codejam/contest/2845486/dashboard#s=p3
 
-FILENAME = "D-small-practice-2"
+FILENAME = "D-small-practice-1"
 
 import sys
 sys.stdin = open(FILENAME + ".in", 'r')
-#sys.stdout = open(FILENAME + ".out", 'w')
+sys.stdout = open(FILENAME + ".out", 'w')
 
 def get_line(): return input()
 def get_int(): return int(get_line())
@@ -47,19 +47,29 @@ def solve():
     matrix = np.matrix([get_ints() for x in range(M)])
     turns = -1
     while not clean_players(matrix) == None:
-        newmatrix = np.copy(matrix)
+        newmatrix = np.matrix(matrix)
+        isolated = False
         for y, x in product(range(M),range(N)):
             if matrix[y,x]:
                 good = list(filter(lambda pos: matrix[pos[0],pos[1]] > 0, neigbours(y, x, M, N)))
-                count = len(good)
-                for yy,xx in good: newmatrix[yy,xx] += 12/count
                 newmatrix[y,x] -= 12
+                count = len(good)
+                if count:
+                    for yy,xx in good: newmatrix[yy,xx] += 12/count
+                else:
+                    isolated = True
         if (matrix==newmatrix).all():
-            return "%d children will play forever" % np.count_nonzero(matrix)
-        matrix = newmatrix
-        print(matrix)
-        turns += 1
-    return "%d turns" % max(0,turns)
+            return '%d children will play forever' % np.count_nonzero(matrix)
+
+        dif = newmatrix - matrix
+        jump = (12 - matrix) // dif
+        jumppos = jump[jump > 0]
+        accelerate = 1 if isolated or jumppos.size==0 else max(1, jumppos.min())
+        accelerate = 1 # TODO: Get this right for all cases
+        turns += accelerate
+
+        matrix = matrix + (dif * accelerate)
+    return '%d turns' % max(0,turns)
 
 
 for case in range(get_int()):
