@@ -1,5 +1,7 @@
 # https://code.google.com/codejam/contest/90101/dashboard#s=p0
 
+# another easier way to transform it into a re
+
 FILENAME = "A-large-practice"
 
 import sys
