@@ -5,7 +5,6 @@ https://code.google.com/codejam/
 
 Java practices remaining to be implemented in Python:
 
-05_Watersheds	small optimization to watersheds	2 years ago
 06_WelcomeToCodeJam	welcome to code jam with DP (dynamic programming)	2 years ago
 07_MinimumScalarProduct	minimun scalar product	2 years ago
 08_Milkshakes	cosmetic changes	2 years ago
