@@ -26,7 +26,7 @@ def solve(text):
                 if max_pars < 0:
                     return False
         smiley = ch == ':'
-    return min_pars <= 0 <= max_pars
+    return min_pars == 0
 
 
 def get_line(): return input()
